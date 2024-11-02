@@ -69,7 +69,7 @@ const Addstdform = () => {
     const { name, value } = e.target;
     if (name === "grade") {
       const numericValue = parseInt(value, 10);
-      if (value === "" || numericValue >= 0) {
+      if (value === "" || numericValue >= 1  < 14) {
         setFormData({
           ...formData,
           [name]: value,
