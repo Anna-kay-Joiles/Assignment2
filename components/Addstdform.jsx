@@ -67,10 +67,22 @@ const Addstdform = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    if (name === "grade") {
+      const numericValue = parseInt(value, 10);
+      if (value === "" || numericValue >= 0) {
+        setFormData({
+          ...formData,
+          [name]: value,
+        });
+      } else {
+        setMessage("Grade must be 0 or higher.");
+      }
+    } else {
     setFormData({
       ...formData,
       [name]: value,
     });
+  }
   };
 
   const handleEdit = (student) => {
