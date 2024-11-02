@@ -69,13 +69,13 @@ const Addstdform = () => {
     const { name, value } = e.target;
     if (name === "grade") {
       const numericValue = parseInt(value, 10);
-      if (value === "" || numericValue >= 1  < 14) {
+      if (value === "" ||(numericValue >= 1 && numericValue < 14)) {
         setFormData({
           ...formData,
           [name]: value,
         });
       } else {
-        setMessage("Grade must be 0 or higher.");
+        setMessage("Grade must be 1 and less than 14.");
       }
     } else {
     setFormData({
